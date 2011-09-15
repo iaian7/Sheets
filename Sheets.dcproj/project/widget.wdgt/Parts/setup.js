@@ -17,14 +17,20 @@ var dashcodePartSpecs = {
     "nameSpriteText": { "text": "nameSpriteText", "view": "DC.Text" },
     "new": { "text": "new", "view": "DC.Text" },
     "newVersion": { "text": "newVersion", "view": "DC.Text" },
+    "output": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "output", "onchange": "updateOutput", "options": [["alpha on", "0"], ["alpha off", "1"], ["alpha extract", "2"], ["multiple files", "3"]], "rightImageWidth": 16, "view": "DC.View" },
+    "outputText": { "text": "outputText", "view": "DC.Text" },
+    "scale": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "scale", "onchange": "updateScale", "options": [["point", "Point"], ["box", "Box"], ["cubic", "Cubic"], ["quadratic", "Quadratic", true], ["gaussian", "Gaussian"], ["mitchell", "Mitchell"], ["catrom", "Catrom"], ["lanczos", "Lanczos"]], "rightImageWidth": 16, "view": "DC.View" },
+    "scaleText": { "text": "scaleText", "view": "DC.Text" },
     "skip": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "skip", "view": "DC.View" },
     "stack": { "subviewsTransitions": [{ "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }], "view": "DC.StackLayout" },
     "successButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done", "view": "DC.View" },
     "successDetails": { "text": "successDetails", "view": "DC.Text" },
     "successText": { "text": "success", "view": "DC.Text" },
     "text": { "text": "copyrightText", "view": "DC.Text" },
-    "type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "type", "onchange": "updateType", "options": [["sprite sheet", "square"], ["horizontal strip", "stripH"], ["vertical strip", "stripV"], ["custom resize", "resize"], ["custom tile", "tile"], ["custom resize+tile", "custom"], ["file sheet", "file"]], "rightImageWidth": 16, "view": "DC.View" },
+    "type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "type", "onchange": "updateType", "options": [["auto sprite sheet", "square"], ["horizontal strip", "stripH"], ["vertical strip", "stripV"], ["custom resize", "resize"], ["custom tile", "tile"], ["custom resize+tile", "custom"], ["auto file sheet", "file"]], "rightImageWidth": 16, "view": "DC.View" },
     "wrongButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done", "view": "DC.View" },
     "wrongText": { "text": "wrong", "view": "DC.Text" }
 };
+
+
 

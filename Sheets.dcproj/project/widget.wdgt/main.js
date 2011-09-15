@@ -114,7 +114,13 @@ if (window.widget) {
 	widget.onsync = sync;
 }
 
-// Begin app-specific functions
+
+
+// ---------------------------- //
+// Begin app-specific functions //
+// ---------------------------- //
+
+
 
 var wid = widget.identifier;
 var prefType = loadPref(wid+"type",0);
@@ -123,6 +129,8 @@ var prefTile = loadPref(wid+"tile","4x4");
 var prefLocation = loadPref(wid+"loc","/opt/local/bin/");
 var prefNameSprite = loadPref(wid+"nameSprite","SpriteSheet");
 var prefNameFile = loadPref(wid+"nameFile","FileSheet-");
+var prefScale = loadPref(wid+"scale",3);
+var prefOutput = loadPref(wid+"output",0);
 
 // Preference Saving
 
@@ -144,6 +152,8 @@ function loadPrefs() {
 	document.getElementById("loc").value = prefLocation;
 	document.getElementById("nameSprite").value = prefNameSprite;
 	document.getElementById("nameFile").value = prefNameFile;
+	document.getElementById("scale").object.setSelectedIndex(prefScale);
+	document.getElementById("output").object.setSelectedIndex(prefOutput);
 	updateOpacity();
 //	updateSize(size);
 }
@@ -162,6 +172,8 @@ function updatePrefs() {
 		widget.setPreferenceForKey(prefLocation,wid+"loc");
 		widget.setPreferenceForKey(prefNameSprite,wid+"nameSprite");
 		widget.setPreferenceForKey(prefNameFile,wid+"nameFile");
+		widget.setPreferenceForKey(prefScale,wid+"scale");
+		widget.setPreferenceForKey(prefOutput,wid+"output");
 	}
 }
 
@@ -220,6 +232,18 @@ function updateNameFile(event) {
 	prefNameFile = document.getElementById("nameFile").value;
 }
 
+function updateScale(event) {
+	prefScale = document.getElementById("scale").object.getSelectedIndex();
+	updatePrefs();
+}
+
+function updateOutput(event) {
+	prefOutput = document.getElementById("output").object.getSelectedIndex();
+	updatePrefs();
+}
+
+
+
 // Be sure to assign these handlers for the ondragenter and ondragover events on your drop target. These handlers prevent Web Kit from processing drag events so you can handle the drop when it occurs.
 
 function dragEnter(event) {
@@ -240,15 +264,16 @@ function dragDrop(event) {
 		uri = uri.split("\n");
 		uri = uri.sort(sortAlphaNum);
 		var uriParts = uri[0].match(/(.+?)(\d+)(\.\w{3,4})$/);
-		if (uriParts == null) { uriParts = uri[0].match(/(.+?)(\.\w{3,4})$/); }
-		alert("file format: "+uriParts[3]);
+		if (uriParts == null) uriParts = uri[0].match(/(.+?)(\.\w{3,4})$/);
+		if (typeof(uriParts[3])=="undefined") uriParts[3] = uriParts[2];
 		var name = uriParts[1]+prefNameSprite+uriParts[3];
-		var nameRGB = uriParts[1]+prefNameSprite+".flat"+uriParts[3];
-		var nameAlpha = uriParts[1]+prefNameSprite+".alpha"+uriParts[3];
+		var nameRGB = uriParts[1]+prefNameSprite+".rgb"+uriParts[3];
+		var nameAlpha = uriParts[1]+prefNameSprite+".a"+uriParts[3];
 		var tile = "";
 		var geometry = "";
 		var mode = "+0+0 ";
 		var padding = 4;
+		var scale = "-filter ";
 
 		if (prefType == 1) {
 			tile = "-tile x1";
@@ -272,17 +297,47 @@ function dragDrop(event) {
 			}
 		}
 
+		switch (prefScale) {
+		case 0:
+			scale += "Point ";
+			break;
+		case 1:
+			scale += "Box ";
+			break;
+		case 2:
+			scale += "Cubic ";
+			break;
+		case 3:
+			scale += "Quadratic ";
+			break;
+		case 4:
+			scale += "Gaussian ";
+			break;
+		case 5:
+			scale += "Mitchell ";
+			break;
+		case 6:
+			scale += "Catrom ";
+			break;
+		case 7:
+			scale += "Lanczos ";
+			break;
+		default:
+			scale = "";
+		}
+
+alert("scale: "+scale);
+alert("prefOutput: "+prefOutput);
+
 		if (uri.length == 1) {
-//  alert("output string: "+prefLocation+"montage -background none -alpha set -filter Mitchell "+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+name);
-			widget.system(prefLocation+"montage -background none -alpha set "+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+name, endHandler).outputString;
-			widget.system(prefLocation+"montage -background none -alpha off "+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameRGB, endHandler).outputString;
-//			widget.system(prefLocation+"montage -background none -alpha extract "+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameAlpha, endHandler).outputString;
+			if (prefOutput == 0 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha set "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+name, endHandler).outputString;
+			if (prefOutput == 1 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha off "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameRGB, endHandler).outputString;
+			if (prefOutput == 2 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameAlpha, endHandler).outputString;
 			showSuccess(event);
 		} else {
-//  alert("output string: "+prefLocation+"montage -background none -alpha set -filter Mitchell "+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+name);
-			widget.system(prefLocation+"montage -background none -alpha set "+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+name, endHandler).outputString;
-			widget.system(prefLocation+"montage -background none -alpha off "+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameRGB, endHandler).outputString;
-//			widget.system(prefLocation+"montage -background none -alpha extract "+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameAlpha, endHandler).outputString;
+			if (prefOutput == 0 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha set "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+name, endHandler).outputString;
+			if (prefOutput == 1 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha off "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameRGB, endHandler).outputString;
+			if (prefOutput == 2 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameAlpha, endHandler).outputString;
 			showSuccess(event);
 		}
 	} catch (ex) {

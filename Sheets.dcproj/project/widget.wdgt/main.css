@@ -50,10 +50,10 @@ body {
 #input {
     position: absolute;
     margin-top: 0px;
-    -webkit-border-top-left-radius: 5px 5px;
-    -webkit-border-top-right-radius: 5px 5px;
-    -webkit-border-bottom-left-radius: 5px 5px;
-    -webkit-border-bottom-right-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
     border-width: 1px !important;
     border-style: solid;
     font-size: 13px;
@@ -64,10 +64,10 @@ body {
     right: 0px;
     width: auto;
     background-image: url(Images/Form-Background-Large.png);
-    background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.5);
     height: 96px;
     background-position: 50% 50%;
+    background-repeat: repeat no-repeat;
 }
 
 #main {
@@ -372,11 +372,11 @@ body {
     font-size: 10pt;
     text-align: left;
     left: 22px;
-    height: 30px;
-    top: 171px;
+    top: 176px;
     margin-bottom: auto;
     right: 78px;
     width: auto;
+    height: 30px;
 }
 
 #tile {
@@ -384,15 +384,14 @@ body {
     font-family: HelveticaNeue;
     text-align: center;
     color: rgb(255, 255, 255);
-    -webkit-border-top-left-radius: 5px 5px;
-    -webkit-border-top-right-radius: 5px 5px;
-    -webkit-border-bottom-left-radius: 5px 5px;
-    -webkit-border-bottom-right-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
     border-width: 1px;
     font-size: 13pt;
     width: 120px;
     background-color: rgba(0, 0, 0, 0);
-    background-repeat: repeat-x;
     background-image: url(Images/formBackground%202.png);
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.5);
@@ -401,6 +400,7 @@ body {
     margin-left: auto;
     opacity: 0.5;
     background-position: 50% 50%;
+    background-repeat: repeat no-repeat;
 }
 
 #size {
@@ -408,15 +408,14 @@ body {
     font-family: HelveticaNeue;
     text-align: center;
     color: rgb(255, 255, 255);
-    -webkit-border-top-left-radius: 5px 5px;
-    -webkit-border-top-right-radius: 5px 5px;
-    -webkit-border-bottom-left-radius: 5px 5px;
-    -webkit-border-bottom-right-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
     border-width: 1px;
     font-size: 13pt;
     width: 120px;
     background-color: rgba(0, 0, 0, 0);
-    background-repeat: repeat-x;
     background-image: url(Images/formBackground%202.png);
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.5);
@@ -425,6 +424,7 @@ body {
     margin-left: auto;
     opacity: 0.5;
     background-position: 50% 50%;
+    background-repeat: repeat no-repeat;
 }
 
 #type {
@@ -446,13 +446,12 @@ body {
 #loc {
     position: absolute;
     color: rgb(255, 255, 255);
-    -webkit-border-top-left-radius: 5px 5px;
-    -webkit-border-top-right-radius: 5px 5px;
-    -webkit-border-bottom-left-radius: 5px 5px;
-    -webkit-border-bottom-right-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
     border-width: 1px;
     background-color: rgba(0, 0, 0, 0);
-    background-repeat: repeat-x;
     background-image: url(Images/formBackground%202.png);
     border-style: solid;
     left: 22px;
@@ -465,6 +464,7 @@ body {
     margin-bottom: auto;
     top: 38px;
     background-position: 50% 50%;
+    background-repeat: repeat no-repeat;
 }
 
 #locationText {
@@ -531,16 +531,14 @@ body {
     position: absolute;
     font-family: HelveticaNeue;
     color: rgb(255, 255, 255);
-    -webkit-border-top-left-radius: 5px 5px;
-    -webkit-border-top-right-radius: 5px 5px;
-    -webkit-border-bottom-left-radius: 5px 5px;
-    -webkit-border-bottom-right-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
     border-width: 1px;
     background-color: rgba(0, 0, 0, 0);
-    background-repeat: repeat-x;
     background-image: url(Images/formBackground%202.png);
     border-style: solid;
-    width: 252px;
     left: 22px;
     font-size: 11pt;
     overflow: hidden;
@@ -549,32 +547,34 @@ body {
     margin-right: auto;
     margin-bottom: auto;
     top: 88px;
+    width: 120px;
     background-position: 50% 50%;
+    background-repeat: repeat no-repeat;
 }
 
 #nameFile {
     position: absolute;
     font-family: HelveticaNeue;
     color: rgb(255, 255, 255);
-    -webkit-border-top-left-radius: 5px 5px;
-    -webkit-border-top-right-radius: 5px 5px;
-    -webkit-border-bottom-left-radius: 5px 5px;
-    -webkit-border-bottom-right-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
     border-width: 1px;
     background-color: rgba(0, 0, 0, 0);
-    background-repeat: repeat-x;
     background-image: url(Images/formBackground%202.png);
     border-style: solid;
-    width: 252px;
-    left: 22px;
     font-size: 11pt;
     overflow: hidden;
     text-align: left;
     border-color: rgba(0, 0, 0, 0.5);
-    margin-right: auto;
-    top: 138px;
     margin-bottom: auto;
+    top: 88px;
+    right: 22px;
+    margin-left: auto;
+    width: 120px;
     background-position: 50% 50%;
+    background-repeat: repeat no-repeat;
 }
 
 #nameFileText {
@@ -587,10 +587,11 @@ body {
     text-align: left;
     left: 22px;
     height: 18px;
-    top: 122px;
     margin-bottom: auto;
     right: 22px;
-    width: auto;
+    top: 72px;
+    margin-left: auto;
+    width: 122px;
 }
 
 #nameSpriteText {
@@ -604,7 +605,74 @@ body {
     left: 22px;
     height: 18px;
     margin-bottom: auto;
-    right: 22px;
-    width: auto;
     top: 72px;
+    margin-right: auto;
+    width: 122px;
+}
+
+#outputText {
+    font-family: HelveticaNeue;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 10pt;
+    text-align: left;
+    height: 15px;
+    top: 122px;
+    margin-bottom: auto;
+    right: 22px;
+    margin-left: auto;
+    width: 122px;
+}
+
+#scale {
+    position: absolute;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    text-shadow: rgb(0, 0, 0) 0px -1px 1px;
+    height: 24px;
+    width: 124px;
+    top: 140px;
+    margin-right: auto;
+    margin-bottom: auto;
+    right: auto;
+    bottom: auto;
+    left: 22px;
+    text-align: left;
+    font-family: 'Helvetica Neue';
+}
+
+#output {
+    position: absolute;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    text-shadow: rgb(0, 0, 0) 0px -1px 1px;
+    height: 24px;
+    width: 124px;
+    top: 140px;
+    left: 154px;
+    margin-right: auto;
+    margin-bottom: auto;
+    text-align: left;
+    font-family: 'Helvetica Neue';
+}
+
+#scaleText {
+    font-family: HelveticaNeue;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 10pt;
+    text-align: left;
+    right: 12px;
+    height: 15px;
+    left: 22px;
+    top: 122px;
+    margin-bottom: auto;
+    margin-right: auto;
+    width: 124px;
 }
