@@ -21,29 +21,29 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>0</integer>
+	<integer>5</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>3ecb9364917ab041</string>
+		<string>25032c067b7eb041</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/Un/UnxUHwCPHWKctaUXGCL53k+++TI/-Tmp-/Dashcode/.Sheets.dcprojDsulpD/Sheets.dcproj/project.wdgt/</string>
+		<string>/private/var/folders/Un/UnxUHwCPHWKctaUXGCL53k+++TI/-Tmp-/Dashcode/.Sheets.dcproj94vnIZ/Sheets.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>2</integer>
+		<integer>1</integer>
 		<key>percent-x</key>
-		<real>0.26718750596046448</real>
+		<real>0.29218751192092896</real>
 		<key>percent-y</key>
-		<real>0.2916666567325592</real>
+		<real>0.30916666984558105</real>
 		<key>pos-x</key>
-		<integer>1107</integer>
+		<integer>2481</integer>
 		<key>pos-y</key>
-		<integer>350</integer>
+		<integer>371</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -215,7 +215,11 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array/>
+	<array>
+		<array>
+			<integer>5</integer>
+		</array>
+	</array>
 	<key>Opened Steps</key>
 	<array>
 		<integer>0</integer>

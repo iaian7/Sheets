@@ -121,7 +121,8 @@ var prefType = loadPref(wid+"type",0);
 var prefSize = loadPref(wid+"size","128x128");
 var prefTile = loadPref(wid+"tile","4x4");
 var prefLocation = loadPref(wid+"loc","/opt/local/bin/");
-var prefName = loadPref(wid+"name","spriteSheet");
+var prefNameSprite = loadPref(wid+"nameSprite","SpriteSheet");
+var prefNameFile = loadPref(wid+"nameFile","FileSheet-");
 
 // Preference Saving
 
@@ -141,7 +142,8 @@ function loadPrefs() {
 	document.getElementById("size").value = prefSize;
 	document.getElementById("tile").value = prefTile;
 	document.getElementById("loc").value = prefLocation;
-	document.getElementById("name").value = prefName;
+	document.getElementById("nameSprite").value = prefNameSprite;
+	document.getElementById("nameFile").value = prefNameFile;
 	updateOpacity();
 //	updateSize(size);
 }
@@ -158,7 +160,8 @@ function updatePrefs() {
 		widget.setPreferenceForKey(prefSize,wid+"size");
 		widget.setPreferenceForKey(prefTile,wid+"tile");
 		widget.setPreferenceForKey(prefLocation,wid+"loc");
-		widget.setPreferenceForKey(prefName,wid+"name");
+		widget.setPreferenceForKey(prefNameSprite,wid+"nameSprite");
+		widget.setPreferenceForKey(prefNameFile,wid+"nameFile");
 	}
 }
 
@@ -168,7 +171,8 @@ function erasePrefs() {
 		widget.setPreferenceForKey(null,wid+"size");
 		widget.setPreferenceForKey(null,wid+"tile");
 		widget.setPreferenceForKey(null,wid+"loc");
-		widget.setPreferenceForKey(null,wid+"name");
+		widget.setPreferenceForKey(null,wid+"nameSprite");
+		widget.setPreferenceForKey(null,wid+"nameFile");
 	}
 }
 
@@ -208,8 +212,12 @@ function updateLoc(event) {
 	prefLoc = document.getElementById("loc").value;
 }
 
-function updateName(event) {
-	prefName = document.getElementById("name").value;
+function updateNameSprite(event) {
+	prefNameSprite = document.getElementById("nameSprite").value;
+}
+
+function updateNameFile(event) {
+	prefNameFile = document.getElementById("nameFile").value;
 }
 
 // Be sure to assign these handlers for the ondragenter and ondragover events on your drop target. These handlers prevent Web Kit from processing drag events so you can handle the drop when it occurs.
@@ -232,11 +240,11 @@ function dragDrop(event) {
 		uri = uri.split("\n");
 		uri = uri.sort(sortAlphaNum);
 		var uriParts = uri[0].match(/(.+?)(\d+)(\.\w{3,4})$/);
+		var name = uriParts[1]+prefNameSprite+".png";
 		var tile = "";
 		var geometry = "";
 		var mode = "+0+0 ";
 		var padding = 4;
-		var name = uriParts[1]+prefName+".png";
 
 		if (prefType == 1) {
 			tile = "-tile x1";
@@ -253,6 +261,8 @@ function dragDrop(event) {
 //				padding = prefSize.split("x");
 //				padding = padding[0]*0.1;
 				mode = "+"+padding+"+"+padding+" -label '%f\n%[width]x%[height]' ";
+				uriParts = uri[0].match(/(.+?)([^\/]+)(\.\w{3,4})$/);
+				name = uriParts[1]+prefNameFile+uriParts[2]+".png";
 			}
 		}
 
@@ -363,24 +373,30 @@ function getKeyValue(plist, key) {
 // Auto Update
 
 function versionCheck(event) {
-return false; // REMOVE THIS LINE TO ENABLE VERSION CHECK
 	var request = new XMLHttpRequest();
 	var address = "http://iaian7.com/files/dashboard/sheets/version.php?RandomKey=" + Date.parse(new Date());
-//	alert(address);
-	request.open("GET", address,false);
+	request.onload = function() { versionCheckEnd(request); };
+	request.open("GET", address);
+//	request.setRequestHeader("Cache-Control", "no-cache");
 	request.send(null);
-	var versions = request.responseText.split("\n");
+}
 
-	var bundleVersion = getKeyValue("Info.plist", "CFBundleVersion"); 
-	var websiteVersion = versions[0];
-//	alert("bundleVersion: "+bundleVersion);
-//	alert("websiteVersion: "+websiteVersion);
+function versionCheckEnd(request){
+	if (request.status == 200) {
+		var versions = request.responseText.split("\n");
+		var bundleVersion = getKeyValue("Info.plist", "CFBundleVersion");
+		var websiteVersion = versions[0];
+		alert("bundleVersion: "+bundleVersion);
+		alert("websiteVersion: "+websiteVersion);
 
-	if (websiteVersion != bundleVersion) {
-		document.getElementById("newVersion").innerHTML = "version "+versions[0]+"<br/>"+versions[1];
-		showUpdate();
+		if (websiteVersion != bundleVersion) {
+			document.getElementById("newVersion").innerHTML = "version "+versions[0]+"<br/>"+versions[1];
+			return showUpdate();
+		} else {
+			alert("you have an up to date version");
+		}
 	} else {
-		alert("you have an up to date version, or there's been an error");
+		alert("there's been an error fetching HTTP data");
 	}
 }
 

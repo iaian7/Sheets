@@ -369,11 +369,11 @@ body {
     font-size: 10pt;
     text-align: left;
     left: 22px;
+    height: 30px;
+    top: 171px;
     margin-bottom: auto;
     right: 78px;
     width: auto;
-    top: 166px;
-    height: 30px;
 }
 
 #tile {
@@ -396,6 +396,7 @@ body {
     top: 136px;
     right: 0px;
     margin-left: auto;
+    opacity: 0.5;
     background-position: 50% 50%;
 }
 
@@ -419,6 +420,7 @@ body {
     top: 136px;
     right: 132px;
     margin-left: auto;
+    opacity: 0.5;
     background-position: 50% 50%;
 }
 
@@ -478,31 +480,6 @@ body {
     width: auto;
 }
 
-#name {
-    position: absolute;
-    font-family: HelveticaNeue;
-    color: rgb(255, 255, 255);
-    -webkit-border-top-left-radius: 5px 5px;
-    -webkit-border-top-right-radius: 5px 5px;
-    -webkit-border-bottom-left-radius: 5px 5px;
-    -webkit-border-bottom-right-radius: 5px 5px;
-    border-width: 1px;
-    background-color: rgba(0, 0, 0, 0);
-    background-repeat: repeat-x;
-    background-image: url(Images/formBackground%202.png);
-    border-style: solid;
-    width: 252px;
-    left: 22px;
-    font-size: 11pt;
-    overflow: hidden;
-    text-align: left;
-    border-color: rgba(0, 0, 0, 0.5);
-    margin-right: auto;
-    margin-bottom: auto;
-    top: 88px;
-    background-position: 50% 50%;
-}
-
 #img {
     width: 17px;
     height: 17px;
@@ -547,7 +524,73 @@ body {
     top: 98px;
 }
 
-#nameText {
+#nameSprite {
+    position: absolute;
+    font-family: HelveticaNeue;
+    color: rgb(255, 255, 255);
+    -webkit-border-top-left-radius: 5px 5px;
+    -webkit-border-top-right-radius: 5px 5px;
+    -webkit-border-bottom-left-radius: 5px 5px;
+    -webkit-border-bottom-right-radius: 5px 5px;
+    border-width: 1px;
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: repeat-x;
+    background-image: url(Images/formBackground%202.png);
+    border-style: solid;
+    width: 252px;
+    left: 22px;
+    font-size: 11pt;
+    overflow: hidden;
+    text-align: left;
+    border-color: rgba(0, 0, 0, 0.5);
+    margin-right: auto;
+    margin-bottom: auto;
+    top: 88px;
+    background-position: 50% 50%;
+}
+
+#nameFile {
+    position: absolute;
+    font-family: HelveticaNeue;
+    color: rgb(255, 255, 255);
+    -webkit-border-top-left-radius: 5px 5px;
+    -webkit-border-top-right-radius: 5px 5px;
+    -webkit-border-bottom-left-radius: 5px 5px;
+    -webkit-border-bottom-right-radius: 5px 5px;
+    border-width: 1px;
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: repeat-x;
+    background-image: url(Images/formBackground%202.png);
+    border-style: solid;
+    width: 252px;
+    left: 22px;
+    font-size: 11pt;
+    overflow: hidden;
+    text-align: left;
+    border-color: rgba(0, 0, 0, 0.5);
+    margin-right: auto;
+    top: 138px;
+    margin-bottom: auto;
+    background-position: 50% 50%;
+}
+
+#nameFileText {
+    font-family: HelveticaNeue;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 10pt;
+    text-align: left;
+    left: 22px;
+    height: 18px;
+    top: 122px;
+    margin-bottom: auto;
+    right: 22px;
+    width: auto;
+}
+
+#nameSpriteText {
     font-family: HelveticaNeue;
     text-overflow: ellipsis;
     overflow: hidden;
