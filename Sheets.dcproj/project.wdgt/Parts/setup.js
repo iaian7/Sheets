@@ -5,25 +5,24 @@
  code generator otherwise the changes will be lost.
  */
 var dashcodePartSpecs = {
-    "customText": { "creationFunction": "CreateText", "text": "customText" },
     "doneSave": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showFront", "rightImageWidth": 5, "text": "done" },
     "download": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "versionDownload", "rightImageWidth": 5, "text": "download" },
     "drop": { "creationFunction": "CreateText", "text": "drop" },
-    "explanation": { "creationFunction": "CreateText", "text": "explanation" },
     "failButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done" },
     "failText": { "creationFunction": "CreateText", "text": "fail" },
     "iaian7com": { "creationFunction": "CreateText", "text": "iaian7com" },
     "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "showBack" },
-    "locationText": { "creationFunction": "CreateText", "text": "preset1" },
+    "locationText": { "creationFunction": "CreateText", "text": "locationText" },
+    "nameText": { "creationFunction": "CreateText", "text": "nameText" },
     "new": { "creationFunction": "CreateText", "text": "new" },
     "newVersion": { "creationFunction": "CreateText", "text": "newVersion" },
     "skip": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "skip" },
     "stack": { "creationFunction": "CreateStackLayout", "subviewsTransitions": [{ "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }] },
     "successButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done" },
+    "successDetails": { "creationFunction": "CreateText", "text": "successDetails" },
     "successText": { "creationFunction": "CreateText", "text": "success" },
-    "successText2": { "creationFunction": "CreateText", "text": "success2" },
-    "text": { "creationFunction": "CreateText", "text": "©2009 John Einselen / Vectorform LLC" },
-    "type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "type", "onchange": "updateType", "options": [["auto (single strip)", "strip"], ["auto (sqaure tile)", "square"], ["user settings (paginated)", "user"]], "rightImageWidth": 16 },
+    "text": { "creationFunction": "CreateText", "text": "copyrightText" },
+    "type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "type", "onchange": "updateType", "options": [["sprite sheet", "square"], ["horizontal strip", "stripH"], ["vertical strip", "stripV"], ["custom resize", "resize"], ["custom tile", "tile"], ["custom resize+tile", "custom"], ["file sheet", "file"]], "rightImageWidth": 16 },
     "wrongButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done" },
     "wrongText": { "creationFunction": "CreateText", "text": "wrong" }
 };

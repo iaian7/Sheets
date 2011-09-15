@@ -5,22 +5,18 @@
  code generator otherwise the changes will be lost.
  */
 var localizedStrings = {
-    "customText": "Custom image name",
+    "copyrightText": "©2009 John Einselen / Vectorform LLC",
     "done": "done",
     "download": "download",
     "drop": "drop PNG files here",
-    "explanation": "(leave blank for auto naming of output file)",
-    "fail": "file conversion failed\nplease try again",
+    "fail": "file processing failed\nplease try again",
     "iaian7com": "For more information, please visit iaian7.com/dashboard/sheets",
+    "locationText": "ImageMagick install location",
+    "nameText": "output file suffix",
     "new": "new update available!",
     "newVersion": "version number\nversion description",
-    "preset1": "ImageMagick Montage install location",
-    "preset2": "user preset 2",
     "skip": "skip version",
-    "success": "file conversion\nwas successful",
-    "success2": "(envelope files saved)",
-    "successAE": "file conversion\nwas successful\n(and copied to clipboard)",
-    "successAE2": "sequential phoneme list:",
-    "successAEoutput": "sequential phoneme list",
+    "success": "file processing successful, busy creating sheets",
+    "successDetails": "depending on image size\nthis could take a minute",
     "wrong": "wrong file format\nplease try again"
 };

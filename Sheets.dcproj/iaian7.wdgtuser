@@ -25,7 +25,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>eb3707c95b53b041</string>
+		<string>1aa2d2598c53b041</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -37,20 +37,22 @@
 		<key>percent-type</key>
 		<integer>1</integer>
 		<key>percent-x</key>
-		<real>0.39791667461395264</real>
+		<real>0.3463541567325592</real>
 		<key>percent-y</key>
-		<real>0.16583333909511566</real>
+		<real>0.22499999403953552</real>
 		<key>pos-x</key>
-		<integer>2044</integer>
+		<integer>1945</integer>
 		<key>pos-y</key>
-		<integer>-102</integer>
+		<integer>-31</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
 	<key>DeploymentOptions</key>
 	<dict>
 		<key>Save</key>
-		<true/>
+		<false/>
+		<key>SavePath</key>
+		<string>/Users/iaian7/Dropbox/Documents/Widgets/VF Sheets</string>
 	</dict>
 	<key>Design time language</key>
 	<string>en.lproj</string>
@@ -201,6 +203,18 @@
 			<integer>0</integer>
 			<integer>0</integer>
 		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>2</integer>
+			<integer>4</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
 	</array>
 	<key>Objects view last selections</key>
 	<array/>
@@ -210,8 +224,8 @@
 	</array>
 	<key>Visible StackLayout Views</key>
 	<array>
+		<string>front</string>
 		<string>main</string>
-		<string>back</string>
 	</array>
 </dict>
 </plist>
