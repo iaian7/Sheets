@@ -25,11 +25,11 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>085b1c63c076b041</string>
+		<string>3ecb9364917ab041</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/Un/UnxUHwCPHWKctaUXGCL53k+++TI/-Tmp-/Dashcode/.Sheets.dcprojNyYeC4/Sheets.dcproj/project.wdgt/</string>
+		<string>/private/var/folders/Un/UnxUHwCPHWKctaUXGCL53k+++TI/-Tmp-/Dashcode/.Sheets.dcprojDsulpD/Sheets.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
@@ -37,13 +37,13 @@
 		<key>percent-type</key>
 		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.21770833432674408</real>
+		<real>0.26718750596046448</real>
 		<key>percent-y</key>
-		<real>0.25249999761581421</real>
+		<real>0.2916666567325592</real>
 		<key>pos-x</key>
-		<integer>1202</integer>
+		<integer>1107</integer>
 		<key>pos-y</key>
-		<integer>303</integer>
+		<integer>350</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>

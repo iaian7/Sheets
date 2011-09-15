@@ -230,15 +230,13 @@ function dragDrop(event) {
 		uri = uri.replace(/file:\/\/localhost/gi, "");
 		uri = uri.replace(/\%20/gi, "\\ ");
 		uri = uri.split("\n");
-		uri = uri.sort();
+		uri = uri.sort(sortAlphaNum);
 		var uriParts = uri[0].match(/(.+?)(\d+)(\.\w{3,4})$/);
 		var tile = "";
 		var geometry = "";
 		var mode = "+0+0 ";
 		var padding = 4;
-//		var name = uriParts[1].substring(0, uriParts[1].length-1)+prefName+".png";
 		var name = uriParts[1]+prefName+".png";
-		alert(prefName);
 
 		if (prefType == 1) {
 			tile = "-tile x1";
@@ -289,15 +287,34 @@ function sortNumber(a, b) {
 	return a - b;
 }
 
-function sortSmart(a, b) {
+function sortAlphaNum(a, b) {
+	// the next four lines are designed specifically for OS X file arrays
+	// and will need to be modified depending on the situation
 	var x = a.split("/");
 	var y = b.split("/");
-	x = x[x.length-1];
-	y = y[y.length-1];
-	x = x.replace(/\s0+/g,'');
-	y = y.replace(/\s0+/g,'');
-	return (x < y) ? -1 : ((x > y) ? 1 : x - y);
+	x = x[x.length-1].replace(/\\\s/g," ").split(/(\d+)/);
+	y = y[y.length-1].replace(/\\\s/g," ").split(/(\d+)/);
+	for (var i in x) {
+		if (x[i] && !y[i] || isFinite(x[i]) && !isFinite(y[i])) {
+			return -1;
+		} else if (!x[i] && y[i] || !isFinite(y[i]) && isFinite(y[i])) {
+			return 1;
+		} else if (!isFinite(x[i]) && !isFinite(y[i])) {
+			x[i] = x[i].toLowerCase();
+			y[i] = y[i].toLowerCase();
+			if (x[i] < y[i]) return -1;
+			if (x[i] > y[i]) return 1;
+		} else {
+			x[i] = parseFloat(x[i]);
+			y[i] = parseFloat(y[i]);
+			if (x[i] < y[i]) return -1;
+			if (x[i] > y[i]) return 1;
+		}
+	}
+	return 0;
 }
+
+
 
 // Key listeners
 
@@ -346,17 +363,18 @@ function getKeyValue(plist, key) {
 // Auto Update
 
 function versionCheck(event) {
+return false; // REMOVE THIS LINE TO ENABLE VERSION CHECK
 	var request = new XMLHttpRequest();
 	var address = "http://iaian7.com/files/dashboard/sheets/version.php?RandomKey=" + Date.parse(new Date());
-	alert(address);
+//	alert(address);
 	request.open("GET", address,false);
 	request.send(null);
 	var versions = request.responseText.split("\n");
 
 	var bundleVersion = getKeyValue("Info.plist", "CFBundleVersion"); 
 	var websiteVersion = versions[0];
-	alert("bundleVersion: "+bundleVersion);
-	alert("websiteVersion: "+websiteVersion);
+//	alert("bundleVersion: "+bundleVersion);
+//	alert("websiteVersion: "+websiteVersion);
 
 	if (websiteVersion != bundleVersion) {
 		document.getElementById("newVersion").innerHTML = "version "+versions[0]+"<br/>"+versions[1];
