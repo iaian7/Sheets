@@ -333,11 +333,13 @@ alert("prefOutput: "+prefOutput);
 			if (prefOutput == 0 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha set "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+name, endHandler).outputString;
 			if (prefOutput == 1 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha off "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameRGB, endHandler).outputString;
 			if (prefOutput == 2 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameAlpha, endHandler).outputString;
+			alert(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameAlpha);
 			showSuccess(event);
 		} else {
 			if (prefOutput == 0 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha set "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+name, endHandler).outputString;
 			if (prefOutput == 1 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha off "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameRGB, endHandler).outputString;
 			if (prefOutput == 2 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameAlpha, endHandler).outputString;
+			alert(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameAlpha);
 			showSuccess(event);
 		}
 	} catch (ex) {
