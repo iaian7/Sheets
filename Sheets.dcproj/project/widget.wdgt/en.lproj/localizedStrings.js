@@ -23,3 +23,4 @@ var localizedStrings = {
     "successDetails": "depending on image size\nthis could take a minute",
     "wrong": "wrong file format\nplease try again"
 };
+

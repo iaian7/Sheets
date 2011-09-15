@@ -240,7 +240,11 @@ function dragDrop(event) {
 		uri = uri.split("\n");
 		uri = uri.sort(sortAlphaNum);
 		var uriParts = uri[0].match(/(.+?)(\d+)(\.\w{3,4})$/);
-		var name = uriParts[1]+prefNameSprite+".png";
+		if (uriParts == null) { uriParts = uri[0].match(/(.+?)(\.\w{3,4})$/); }
+		alert("file format: "+uriParts[3]);
+		var name = uriParts[1]+prefNameSprite+uriParts[3];
+		var nameRGB = uriParts[1]+prefNameSprite+".flat"+uriParts[3];
+		var nameAlpha = uriParts[1]+prefNameSprite+".alpha"+uriParts[3];
 		var tile = "";
 		var geometry = "";
 		var mode = "+0+0 ";
@@ -262,15 +266,23 @@ function dragDrop(event) {
 //				padding = padding[0]*0.1;
 				mode = "+"+padding+"+"+padding+" -label '%f\n%[width]x%[height]' ";
 				uriParts = uri[0].match(/(.+?)([^\/]+)(\.\w{3,4})$/);
-				name = uriParts[1]+prefNameFile+uriParts[2]+".png";
+				name = uriParts[1]+prefNameFile+uriParts[2]+uriParts[3];
+				nameRGB = uriParts[1]+prefNameFile+uriParts[2]+".flat"+uriParts[3];
+				nameAlpha = uriParts[1]+prefNameFile+uriParts[2]+".alpha"+uriParts[3];
 			}
 		}
 
 		if (uri.length == 1) {
-			widget.system(prefLocation+"montage -background none "+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+name, endHandler).outputString;
+//  alert("output string: "+prefLocation+"montage -background none -alpha set -filter Mitchell "+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+name);
+			widget.system(prefLocation+"montage -background none -alpha set "+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+name, endHandler).outputString;
+			widget.system(prefLocation+"montage -background none -alpha off "+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameRGB, endHandler).outputString;
+//			widget.system(prefLocation+"montage -background none -alpha extract "+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameAlpha, endHandler).outputString;
 			showSuccess(event);
 		} else {
-			widget.system(prefLocation+"montage -background none "+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+name, endHandler).outputString;
+//  alert("output string: "+prefLocation+"montage -background none -alpha set -filter Mitchell "+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+name);
+			widget.system(prefLocation+"montage -background none -alpha set "+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+name, endHandler).outputString;
+			widget.system(prefLocation+"montage -background none -alpha off "+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameRGB, endHandler).outputString;
+//			widget.system(prefLocation+"montage -background none -alpha extract "+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameAlpha, endHandler).outputString;
 			showSuccess(event);
 		}
 	} catch (ex) {
@@ -386,8 +398,8 @@ function versionCheckEnd(request){
 		var versions = request.responseText.split("\n");
 		var bundleVersion = getKeyValue("Info.plist", "CFBundleVersion");
 		var websiteVersion = versions[0];
-		alert("bundleVersion: "+bundleVersion);
-		alert("websiteVersion: "+websiteVersion);
+//		alert("bundleVersion: "+bundleVersion);
+//		alert("websiteVersion: "+websiteVersion);
 
 		if (websiteVersion != bundleVersion) {
 			document.getElementById("newVersion").innerHTML = "version "+versions[0]+"<br/>"+versions[1];
