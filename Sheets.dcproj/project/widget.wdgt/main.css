@@ -17,8 +17,8 @@ body {
     top: 0px;
     left: 0px;
     right: 0px;
-    width: auto;
     bottom: 0px;
+    width: auto;
     height: auto;
 }
 
@@ -26,10 +26,10 @@ body {
     position: absolute;
     width: 13px;
     height: 13px;
-    right: 18px;
+    right: 20px;
     margin-left: auto;
-    bottom: 18px;
-    margin-top: auto;
+    top: 20px;
+    margin-bottom: auto;
 }
 
 #back {
@@ -58,29 +58,26 @@ body {
     border-style: solid;
     font-size: 13px;
     left: 0px;
-    background-color: rgba(0, 0, 0, 0);
     top: 0px;
     margin-bottom: auto;
     right: 0px;
     width: auto;
-    background-image: url(Images/Form-Background-Large.png);
-    border-color: rgba(0, 0, 0, 0.5);
-    height: 96px;
-    background-position: 50% 50%;
-    background-repeat: repeat no-repeat;
+    height: 78px;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(13, 13, 13);
 }
 
 #main {
     display: none;
     position: relative;
     height: 50px;
-    min-height: 164px;
     margin-left: 0px;
     margin-top: 0px;
-    margin-right: 0px;
     margin-bottom: 0px;
+    border-color: rgba(0, 0, 0, 0.496094);
     width: auto;
-    border-color: rgba(0, 0, 0, 0.5);
+    margin-right: 0px;
+    min-height: 140px;
 }
 
 #stack {
@@ -88,11 +85,11 @@ body {
     z-index: 0;
     position: absolute;
     margin-top: 0px;
-    left: 22px;
-    top: 22px;
-    right: 22px;
+    top: 20px;
+    left: 20px;
+    right: 20px;
     width: auto;
-    bottom: 54px;
+    bottom: 20px;
     height: auto;
 }
 
@@ -132,19 +129,17 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    margin-top: 0px;
-    left: 30px;
-    color: rgb(255, 255, 255);
     font-size: 12pt;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
-    text-align: center;
-    right: 30px;
-    width: auto;
-    height: auto;
-    bottom: 30px;
-    font-weight: bold;
+    color: rgb(191, 191, 191);
     font-family: 'Helvetica Neue';
-    top: 38px;
+    height: 20px;
+    left: 80px;
+    text-align: left;
+    top: 22px;
+    margin-bottom: auto;
+    right: 0px;
+    width: auto;
 }
 
 #successText {
@@ -171,16 +166,16 @@ body {
     width: 100%;
     display: none;
     position: relative;
-    min-height: 164px;
     height: auto;
+    min-height: 140px;
 }
 
 #fail {
     width: 100%;
     display: none;
     position: relative;
-    min-height: 164px;
     height: auto;
+    min-height: 140px;
 }
 
 #failText {
@@ -250,8 +245,8 @@ body {
     width: 100%;
     display: none;
     position: relative;
-    min-height: 164px;
     height: auto;
+    min-height: 140px;
 }
 
 #wrongButton {
@@ -291,9 +286,9 @@ body {
 
 #update {
     width: 100%;
-    min-height: 164px;
     display: none;
     position: relative;
+    min-height: 140px;
 }
 
 #new {
@@ -391,16 +386,13 @@ body {
     border-width: 1px;
     font-size: 13pt;
     width: 120px;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url(Images/formBackground%202.png);
     border-style: solid;
-    border-color: rgba(0, 0, 0, 0.5);
-    top: 136px;
+    opacity: 0.5;
+    background-color: rgb(13, 13, 13);
+    top: 111px;
+    border-color: rgb(0, 0, 0);
     right: 0px;
     margin-left: auto;
-    opacity: 0.5;
-    background-position: 50% 50%;
-    background-repeat: repeat no-repeat;
 }
 
 #size {
@@ -415,16 +407,13 @@ body {
     border-width: 1px;
     font-size: 13pt;
     width: 120px;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url(Images/formBackground%202.png);
     border-style: solid;
-    border-color: rgba(0, 0, 0, 0.5);
-    top: 136px;
-    right: 132px;
-    margin-left: auto;
     opacity: 0.5;
-    background-position: 50% 50%;
-    background-repeat: repeat no-repeat;
+    background-color: rgb(13, 13, 13);
+    top: 111px;
+    border-color: rgb(0, 0, 0);
+    right: 136px;
+    margin-left: auto;
 }
 
 #type {
@@ -435,12 +424,12 @@ body {
     opacity: 1;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     text-align: center;
-    height: 24px;
     left: 0px;
-    bottom: 33px;
-    margin-top: auto;
     right: 0px;
     width: auto;
+    margin-bottom: auto;
+    height: 25px;
+    top: 90px;
 }
 
 #loc {
@@ -459,7 +448,7 @@ body {
     font-size: 11pt;
     font-family: 'Helvetica Neue';
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.496094);
     margin-right: auto;
     margin-bottom: auto;
     top: 38px;
@@ -492,7 +481,7 @@ body {
     margin-top: 0px;
     opacity: 0.5;
     left: 3px;
-    top: 142px;
+    top: 117px;
 }
 
 #img1 {
@@ -502,9 +491,9 @@ body {
     right: auto;
     bottom: auto;
     margin-top: 0px;
-    left: 136px;
     opacity: 0.5;
-    top: 142px;
+    top: 117px;
+    left: 140px;
 }
 
 #successDetails {
@@ -543,7 +532,7 @@ body {
     font-size: 11pt;
     overflow: hidden;
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.496094);
     margin-right: auto;
     margin-bottom: auto;
     top: 88px;
@@ -567,7 +556,7 @@ body {
     font-size: 11pt;
     overflow: hidden;
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.496094);
     margin-bottom: auto;
     top: 88px;
     right: 22px;
