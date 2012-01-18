@@ -8,9 +8,11 @@ var dashcodePartSpecs = {
     "doneSave": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showFront", "rightImageWidth": 5, "text": "done", "view": "DC.View" },
     "download": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "versionDownload", "rightImageWidth": 5, "text": "download", "view": "DC.View" },
     "drop": { "text": "drop", "view": "DC.Text" },
+    "dropDetail": { "text": "dropDetail", "view": "DC.Text" },
     "failButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done", "view": "DC.View" },
     "failText": { "text": "fail", "view": "DC.Text" },
     "iaian7com": { "text": "iaian7com", "view": "DC.Text" },
+    "image": { "view": "DC.ImageLayout" },
     "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "showBack", "view": "DC.View" },
     "locationText": { "text": "locationText", "view": "DC.Text" },
     "nameFileText": { "text": "nameFileText", "view": "DC.Text" },
@@ -31,6 +33,7 @@ var dashcodePartSpecs = {
     "wrongButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done", "view": "DC.View" },
     "wrongText": { "text": "wrong", "view": "DC.Text" }
 };
+
 
 
 
