@@ -17,6 +17,7 @@ var dashcodePartSpecs = {
     "locationText": { "text": "locationText", "view": "DC.Text" },
     "nameFileText": { "text": "nameFileText", "view": "DC.Text" },
     "nameSpriteText": { "text": "nameSpriteText", "view": "DC.Text" },
+    "namingText": { "text": "namingText", "view": "DC.Text" },
     "new": { "text": "new", "view": "DC.Text" },
     "newVersion": { "text": "newVersion", "view": "DC.Text" },
     "output": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "output", "onchange": "updateOutput", "options": [["alpha on", "0"], ["alpha off", "1"], ["alpha extract", "2"], ["multiple files", "3"]], "rightImageWidth": 16, "view": "DC.View" },
@@ -33,6 +34,7 @@ var dashcodePartSpecs = {
     "wrongButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done", "view": "DC.View" },
     "wrongText": { "text": "wrong", "view": "DC.Text" }
 };
+
 
 
 

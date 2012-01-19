@@ -127,8 +127,8 @@ var prefType = loadPref(wid+"type",0);
 var prefSize = loadPref(wid+"size","128x128");
 var prefTile = loadPref(wid+"tile","4x4");
 var prefLocation = loadPref(wid+"loc","/opt/local/bin/");
-var prefNameSprite = loadPref(wid+"nameSprite","SpriteSheet_%d");
-var prefNameFile = loadPref(wid+"nameFile","FileSheet-");
+var prefNameSprite = loadPref(wid+"nameSprite","Sheet-%d");
+var prefNameFile = loadPref(wid+"nameFile","Files-");
 var prefScale = loadPref(wid+"scale",3);
 var prefOutput = loadPref(wid+"output",0);
 
@@ -458,7 +458,7 @@ function versionCheckEnd(request){
 //		alert("bundleVersion: "+bundleVersion);
 //		alert("websiteVersion: "+websiteVersion);
 
-		if (websiteVersion != bundleVersion) {
+		if (websiteVersion > bundleVersion) {
 			document.getElementById("newVersion").innerHTML = "version "+versions[0]+"<br/>"+versions[1];
 			return showUpdate();
 		} else {

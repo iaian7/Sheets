@@ -11,20 +11,23 @@ var localizedStrings = {
     "drop": "drop image files here",
     "dropDetail": "PNG or TIF files are ideal",
     "fail": "file processing failed\nplease try again",
-    "iaian7com": "For more information, please visit iaian7.com/dashboard/sheets",
-    "locationText": "ImageMagick install location",
+    "iaian7com": "For information,\niaian7.com/dashboard/sheets",
+    "locationText": "ImageMagick",
     "nameFileText": "file sheet prefix",
-    "nameSpriteText": "sprite sheet suffix",
+    "nameSpriteText": "sprite suffix",
     "nameText": "sprite sheet suffix",
+    "namingText": "file naming",
     "new": "new update available!",
     "newVersion": "version number\nversion description",
     "outputText": "output files",
+    "outputText1": "file naming",
     "scaleText": "resize algorithm",
     "skip": "skip version",
     "success": "file processing successful, busy creating sheets",
     "successDetails": "depending on image size\nthis could take a minute",
     "wrong": "wrong file format\nplease try again"
 };
+
 
 
 
