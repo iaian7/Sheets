@@ -9,7 +9,7 @@ var localizedStrings = {
     "done": "done",
     "download": "download",
     "drop": "drop image files here",
-    "dropDetail": "PNG or TIF files are ideal",
+    "dropDetail": "PNG or TIFF files are ideal",
     "fail": "file processing failed\nplease try again",
     "iaian7com": "For information,\niaian7.com/dashboard/sheets",
     "locationText": "ImageMagick",
@@ -20,13 +20,14 @@ var localizedStrings = {
     "new": "new update available!",
     "newVersion": "version number\nversion description",
     "outputText": "output files",
-    "outputText1": "file naming",
     "scaleText": "resize algorithm",
     "skip": "skip version",
     "success": "file processing successful, busy creating sheets",
     "successDetails": "depending on image size\nthis could take a minute",
     "wrong": "wrong file format\nplease try again"
 };
+
+
 
 
 

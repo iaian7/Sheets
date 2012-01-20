@@ -127,8 +127,8 @@ var prefType = loadPref(wid+"type",0);
 var prefSize = loadPref(wid+"size","128x128");
 var prefTile = loadPref(wid+"tile","4x4");
 var prefLocation = loadPref(wid+"loc","/opt/local/bin/");
-var prefNameSprite = loadPref(wid+"nameSprite","SpriteSheet");
-var prefNameFile = loadPref(wid+"nameFile","FileSheet-");
+var prefNameSprite = loadPref(wid+"nameSprite","Sheet-%d");
+var prefNameFile = loadPref(wid+"nameFile","Files-");
 var prefScale = loadPref(wid+"scale",3);
 var prefOutput = loadPref(wid+"output",0);
 
@@ -333,11 +333,13 @@ alert("prefOutput: "+prefOutput);
 			if (prefOutput == 0 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha set "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+name, endHandler).outputString;
 			if (prefOutput == 1 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha off "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameRGB, endHandler).outputString;
 			if (prefOutput == 2 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameAlpha, endHandler).outputString;
+			alert(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameAlpha);
 			showSuccess(event);
 		} else {
 			if (prefOutput == 0 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha set "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+name, endHandler).outputString;
 			if (prefOutput == 1 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha off "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameRGB, endHandler).outputString;
 			if (prefOutput == 2 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameAlpha, endHandler).outputString;
+			alert(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameAlpha);
 			showSuccess(event);
 		}
 	} catch (ex) {
@@ -456,7 +458,7 @@ function versionCheckEnd(request){
 //		alert("bundleVersion: "+bundleVersion);
 //		alert("websiteVersion: "+websiteVersion);
 
-		if (websiteVersion != bundleVersion) {
+		if (websiteVersion > bundleVersion) {
 			document.getElementById("newVersion").innerHTML = "version "+versions[0]+"<br/>"+versions[1];
 			return showUpdate();
 		} else {
