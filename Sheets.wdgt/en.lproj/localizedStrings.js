@@ -11,7 +11,7 @@ var localizedStrings = {
     "drop": "drop image files here",
     "dropDetail": "PNG or TIFF files are ideal",
     "fail": "file processing failed\nplease try again",
-    "iaian7com": "For information,\niaian7.com/dashboard/sheets",
+    "iaian7com": "For more, visit\niaian7.com/dashboard/sheets",
     "locationText": "ImageMagick",
     "nameFileText": "file sheet prefix",
     "nameSpriteText": "sprite suffix",
@@ -26,6 +26,7 @@ var localizedStrings = {
     "successDetails": "depending on image size\nthis could take a minute",
     "wrong": "wrong file format\nplease try again"
 };
+
 
 
 
