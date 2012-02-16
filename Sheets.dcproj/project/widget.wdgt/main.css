@@ -139,8 +139,8 @@ body {
     margin-bottom: auto;
     right: 0px;
     width: auto;
-    opacity: 0.75;
     color: rgb(255, 255, 255);
+    opacity: 1;
 }
 
 #successText {
@@ -366,10 +366,10 @@ body {
     line-height: 10px;
     margin-right: auto;
     margin-top: auto;
-    bottom: 30px;
     height: 25px;
     text-shadow: none;
     font-size: 11px;
+    bottom: 28px;
 }
 
 #tile {
